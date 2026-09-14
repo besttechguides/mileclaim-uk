@@ -604,12 +604,6 @@
     });
     els.btnClear.addEventListener("click", onClearAll);
 
-    var packCta = $("packCta");
-    if (packCta) {
-      packCta.addEventListener("click", function (e) {
-        e.preventDefault();
-      });
-    }
   }
 
   function init() {
