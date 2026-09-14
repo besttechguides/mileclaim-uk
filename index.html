@@ -3,9 +3,84 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free browser-local HMRC mileage trip log and AMAP / MAR calculator for UK tax year 2026/27. Not tax advice — verify rates on GOV.UK.">
-  <title>MileClaim UK — HMRC mileage log &amp; MAR calculator</title>
+  <title>HMRC mileage rates 2026 — UK calculator, log &amp; MAR | MileClaim</title>
+  <meta name="description" content="Free UK mileage calculator and HMRC trip log for 2026/27 AMAP rates (55p for cars). Estimate Mileage Allowance Relief (MAR). Not tax advice — verify on GOV.UK.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://besttechguides.github.io/mileclaim-uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://besttechguides.github.io/mileclaim-uk/">
+  <meta property="og:site_name" content="MileClaim UK">
+  <meta property="og:title" content="HMRC mileage rates 2026 — UK calculator, log &amp; MAR | MileClaim">
+  <meta property="og:description" content="Free UK mileage calculator and HMRC trip log for 2026/27 AMAP rates (55p for cars). Estimate Mileage Allowance Relief (MAR). Not tax advice — verify on GOV.UK.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HMRC mileage rates 2026 — UK calculator, log &amp; MAR | MileClaim">
+  <meta name="twitter:description" content="Free UK mileage calculator and HMRC trip log for 2026/27 AMAP rates (55p for cars). Estimate Mileage Allowance Relief (MAR). Not tax advice — verify on GOV.UK.">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the HMRC mileage rates for 2026/27?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For tax year 2026/27 this calculator uses Approved Mileage Allowance Payment (AMAP) rates of 55p per mile for the first 10,000 business miles in a car or van, then 25p; 24p for motorcycles; 20p for bicycles. Passenger payments for cars and vans are +5p per passenger per business mile. Always verify current figures on GOV.UK Travel — mileage and fuel rates and allowances."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Mileage Allowance Relief (MAR)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your employer reimburses you at less than the AMAP rate for the same business miles, the difference may qualify as Mileage Allowance Relief. Passenger shortfalls do not qualify for MAR. See Tax relief for employees — vehicles you use for work on GOV.UK. This tool estimates a shortfall only — it does not file a claim."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I keep a mileage log for HMRC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Record each business journey with date, from, to, purpose and miles. Use the trip log to store journeys in this browser, then download CSV or print. Keep records in case HMRC asks for evidence. MileClaim UK is an unofficial helper, not a filing service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does AMAP 55p mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AMAP is the Approved Mileage Allowance Payment. For 2026/27 the first-band car and van rate used here is 55p per business mile (45p in 2025/26). After 10,000 business miles in the tax year the car/van rate is 25p. Confirm on GOV.UK before you claim."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this mileage calculator file anything with HMRC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. MileClaim UK is a free calculator and mileage log that runs in your browser. We do not store trips on a server or send data to HMRC. It is not tax advice."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "MileClaim UK",
+    "url": "https://besttechguides.github.io/mileclaim-uk/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP"
+    },
+    "description": "Free browser-local HMRC mileage trip log and AMAP / MAR calculator for UK tax year 2026/27."
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -13,8 +88,8 @@
   <header class="site-header">
     <div class="site-header__inner">
       <p class="site-header__eyebrow">Unofficial helper · UK</p>
-      <h1>MileClaim UK</h1>
-      <p>Free browser-local trip log and Approved Mileage Allowance Payment (AMAP) calculator for tax year <strong>2026/27</strong>, including Mileage Allowance Relief (MAR) shortfall when your employer pays below the approved rate. Data stays on this device.</p>
+      <h1>HMRC mileage calculator and log</h1>
+      <p>MileClaim UK is a free, browser-local <strong>mileage calculator</strong> and trip log for <strong>HMRC mileage rates 2026/27</strong> (AMAP <strong>55p</strong> for cars and vans on the first 10,000 miles). Estimate <strong>Mileage Allowance Relief (MAR)</strong> when your employer pays below the approved rate. Data stays on this device.</p>
     </div>
   </header>
 
@@ -149,6 +224,26 @@
       <p class="empty-state" id="emptyState">No trips yet. Add your first business journey above.</p>
     </section>
 
+
+    <section class="panel faq no-print" id="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+
+      <h3>What are the HMRC mileage rates for 2026/27?</h3>
+      <p>For tax year 2026/27 this calculator uses Approved Mileage Allowance Payment (AMAP) rates of <strong>55p</strong> per mile for the first 10,000 business miles in a car or van, then <strong>25p</strong>; <strong>24p</strong> for motorcycles; <strong>20p</strong> for bicycles. Passenger payments for cars and vans are <strong>+5p</strong> per passenger per business mile. Always verify current figures on GOV.UK: <a href="https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances" rel="noopener noreferrer" target="_blank">Travel — mileage and fuel rates and allowances</a>.</p>
+
+      <h3>What is Mileage Allowance Relief (MAR)?</h3>
+      <p>If your employer reimburses you at less than the AMAP rate for the same business miles, the difference may qualify as Mileage Allowance Relief. Passenger shortfalls do <strong>not</strong> qualify for MAR. See <a href="https://www.gov.uk/tax-relief-for-employees/vehicles-you-use-for-work" rel="noopener noreferrer" target="_blank">Tax relief for employees — vehicles you use for work</a> on GOV.UK. This tool estimates a shortfall only — it does not file a claim.</p>
+
+      <h3>How do I keep a mileage log for HMRC?</h3>
+      <p>Record each business journey with date, from, to, purpose and miles. Use the trip log above to store journeys in this browser, then download CSV or print. Keep records in case HMRC asks for evidence. MileClaim UK is an unofficial helper, not a filing service.</p>
+
+      <h3>What does AMAP 55p mean?</h3>
+      <p>AMAP is the Approved Mileage Allowance Payment. For 2026/27 the first-band car and van rate used here is 55p per business mile (45p in 2025/26). After 10,000 business miles in the tax year the car/van rate is 25p. Confirm on GOV.UK before you claim.</p>
+
+      <h3>Does this mileage calculator file anything with HMRC?</h3>
+      <p>No. MileClaim UK is a free calculator and mileage log that runs in your browser. We do not store trips on a server or send data to HMRC. It is not tax advice.</p>
+    </section>
+
     <section class="panel pack no-print" id="pack" aria-labelledby="pack-heading">
       <h2 id="pack-heading">HMRC Mileage Claim Pack 2026/27</h2>
       <p>Ready-to-use claim pack: printable log sheets, MAR how-to, and 2026/27 AMAP rates. Instant PDF download — <strong>£12</strong>.</p>
@@ -162,7 +257,7 @@
   <footer class="site-footer">
     <div class="site-footer__inner">
       <p><strong>MileClaim UK</strong> — unofficial, free, browser-local. Not affiliated with HMRC or GOV.UK.</p>
-      <p>Verify rates: <a href="https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances" rel="noopener noreferrer" target="_blank">mileage allowances</a> · <a href="https://www.gov.uk/tax-relief-for-employees/vehicles-you-use-for-work" rel="noopener noreferrer" target="_blank">vehicle tax relief</a></p>
+      <p>Verify rates: <a href="https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances" rel="noopener noreferrer" target="_blank">mileage allowances</a> · <a href="https://www.gov.uk/tax-relief-for-employees/vehicles-you-use-for-work" rel="noopener noreferrer" target="_blank">vehicle tax relief</a> · <a href="#faq">FAQ</a></p>
       <p class="muted">Trips are saved in this browser’s localStorage only. Clearing site data removes them.</p>
     </div>
   </footer>

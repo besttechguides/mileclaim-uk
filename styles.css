@@ -457,6 +457,20 @@ select:hover {
   display: none;
 }
 
+
+.faq h3 {
+  margin: 1.15rem 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.faq h3:first-of-type {
+  margin-top: 0.75rem;
+}
+
+.faq p {
+  margin: 0;
+}
+
 .pack {
   border-color: var(--brand);
   background: linear-gradient(180deg, #f4fbfa 0%, #fff 55%);
@@ -498,7 +512,8 @@ select:hover {
   #employer-heading + .lede,
   #employer-heading + .lede + .field-row,
   .btn,
-  .pack {
+  .pack,
+  .faq {
     display: none !important;
   }
 
