@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free browser-local HMRC mileage trip log and AMAP / MAR calculator for UK tax year 2026/27. Not tax advice — verify rates on GOV.UK.">
+  <title>MileClaim UK — HMRC mileage log &amp; MAR calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-header__eyebrow">Unofficial helper · UK</p>
+      <h1>MileClaim UK</h1>
+      <p>Free browser-local trip log and Approved Mileage Allowance Payment (AMAP) calculator for tax year <strong>2026/27</strong>, including Mileage Allowance Relief (MAR) shortfall when your employer pays below the approved rate. Data stays on this device.</p>
+    </div>
+  </header>
+
+  <main id="main">
+    <aside class="disclaimer" role="note" aria-labelledby="disclaimer-heading">
+      <h2 id="disclaimer-heading">Not tax advice</h2>
+      <p>MileClaim UK is an unofficial helper. Rates and rules change. Always verify on GOV.UK before claiming. We do not file anything with HMRC and do not store your trips on a server.</p>
+      <ul>
+        <li><a href="https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances" rel="noopener noreferrer" target="_blank">Travel — mileage and fuel rates and allowances (GOV.UK)</a></li>
+        <li><a href="https://www.gov.uk/tax-relief-for-employees/vehicles-you-use-for-work" rel="noopener noreferrer" target="_blank">Tax relief for employees — vehicles you use for work (GOV.UK)</a></li>
+      </ul>
+    </aside>
+
+    <section class="panel" aria-labelledby="settings-heading">
+      <h2 id="settings-heading">Tax year &amp; vehicle</h2>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="taxYear">Tax year</label>
+          <span class="hint" id="taxYear-hint">UK tax year runs 6 April to 5 April.</span>
+          <select id="taxYear" name="taxYear" aria-describedby="taxYear-hint">
+            <option value="2026-27" selected>2026 to 2027 (from 6 April 2026)</option>
+            <option value="2025-26">2025 to 2026 (legacy 45p car/van rate)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="vehicleType">Vehicle type</label>
+          <span class="hint" id="vehicle-hint">AMAP rates differ by vehicle kind. Passenger payments apply to cars and vans only.</span>
+          <select id="vehicleType" name="vehicleType" aria-describedby="vehicle-hint">
+            <option value="car">Car or van</option>
+            <option value="motorcycle">Motorcycle</option>
+            <option value="bicycle">Bicycle</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="rates-card" id="ratesCard" aria-live="polite">
+        <!-- Filled by app.js -->
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="employer-heading">
+      <h2 id="employer-heading">Employer reimbursement</h2>
+      <p class="lede">If your employer pays less than the AMAP rate for the same miles, the difference may qualify as Mileage Allowance Relief (MAR). Passenger shortfalls do <strong>not</strong> qualify for MAR relief.</p>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="employerRate">Employer rate (pence per mile)</label>
+          <span class="hint" id="employer-hint">Enter what you are paid per business mile for this vehicle kind (e.g. 40 for 40p). Leave blank or 0 if unpaid.</span>
+          <div class="input-suffix">
+            <input type="number" id="employerRate" name="employerRate" min="0" max="999" step="0.1" inputmode="decimal" placeholder="0" aria-describedby="employer-hint">
+            <span aria-hidden="true">p</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="totals-heading">
+      <h2 id="totals-heading">Running totals</h2>
+      <div class="totals-grid" id="totalsGrid">
+        <!-- Filled by app.js -->
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add a trip</h2>
+      <form id="trip-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="tripDate">Date</label>
+            <input type="date" id="tripDate" name="tripDate" required>
+          </div>
+          <div class="field">
+            <label for="tripMiles">Business miles</label>
+            <input type="number" id="tripMiles" name="tripMiles" min="0.1" max="9999" step="0.1" inputmode="decimal" required placeholder="0">
+          </div>
+          <div class="field" id="passengersField">
+            <label for="tripPassengers">Passengers (colleagues)</label>
+            <span class="hint" id="passengers-hint">Fellow employees on the same work journey. Optional. +5p/mile each if employer pays passenger allowance.</span>
+            <input type="number" id="tripPassengers" name="tripPassengers" min="0" max="20" step="1" inputmode="numeric" value="0" aria-describedby="passengers-hint">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="tripFrom">From</label>
+            <input type="text" id="tripFrom" name="tripFrom" maxlength="120" autocomplete="off" placeholder="e.g. Home / office">
+          </div>
+          <div class="field">
+            <label for="tripTo">To</label>
+            <input type="text" id="tripTo" name="tripTo" maxlength="120" autocomplete="off" placeholder="e.g. Client site">
+          </div>
+        </div>
+        <div class="field">
+          <label for="tripPurpose">Purpose</label>
+          <input type="text" id="tripPurpose" name="tripPurpose" maxlength="200" autocomplete="off" placeholder="e.g. Client meeting" required>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn--primary">Add trip</button>
+          <button type="reset" class="btn btn--secondary">Clear form</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="log-heading">
+      <div class="panel__header">
+        <h2 id="log-heading">Trip log</h2>
+        <div class="actions actions--inline no-print">
+          <button type="button" class="btn btn--secondary" id="btnCsv">Download CSV</button>
+          <button type="button" class="btn btn--secondary" id="btnPrint">Print log</button>
+          <button type="button" class="btn btn--danger" id="btnClear" title="Remove all trips for this tax year">Clear all</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="trip-table" id="tripTable">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Purpose</th>
+              <th scope="col" class="num">Miles</th>
+              <th scope="col" class="num" id="passengersCol">Pass.</th>
+              <th scope="col" class="num">AMAP £</th>
+              <th scope="col" class="no-print"><span class="visually-hidden">Actions</span></th>
+            </tr>
+          </thead>
+          <tbody id="tripBody">
+          </tbody>
+        </table>
+      </div>
+      <p class="empty-state" id="emptyState">No trips yet. Add your first business journey above.</p>
+    </section>
+
+    <section class="panel pack no-print" id="pack" aria-labelledby="pack-heading">
+      <h2 id="pack-heading">HMRC Mileage Claim Pack 2026/27</h2>
+      <p>Want a ready-to-use claim pack (printable templates, MAR worksheet, and checklist) for about <strong>£9–£14</strong>? Soft launch soon.</p>
+      <p>
+        <a class="btn btn--primary btn--disabled" href="#" id="packCta" aria-disabled="true" tabindex="-1">Get the claim pack</a>
+      </p>
+      <p class="hint">Payhip link coming — this button is not live yet. No invented checkout URL.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p><strong>MileClaim UK</strong> — unofficial, free, browser-local. Not affiliated with HMRC or GOV.UK.</p>
+      <p>Verify rates: <a href="https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances" rel="noopener noreferrer" target="_blank">mileage allowances</a> · <a href="https://www.gov.uk/tax-relief-for-employees/vehicles-you-use-for-work" rel="noopener noreferrer" target="_blank">vehicle tax relief</a></p>
+      <p class="muted">Trips are saved in this browser’s localStorage only. Clearing site data removes them.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
