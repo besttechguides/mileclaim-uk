@@ -476,6 +476,13 @@ select:hover {
   background: linear-gradient(180deg, #f4fbfa 0%, #fff 55%);
 }
 
+.pack__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   background: #fff;
