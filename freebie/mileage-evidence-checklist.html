@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mileage evidence checklist 2026/27 — MileClaim UK</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff; }
+      main { max-width: none; box-shadow: none; }
+    }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      display: grid;
+      grid-template-columns: 1.5rem 1fr;
+      gap: 0.5rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .checklist input { width: 1.1rem; height: 1.1rem; margin-top: 0.2rem; }
+  </style>
+</head>
+<body>
+  <main class="panel" style="max-width: 40rem; margin: 1.5rem auto; padding: 1.25rem 1.5rem;">
+    <p class="no-print muted"><a href="./">← Free starter pack</a> · <a href="../">Calculator</a></p>
+    <h1>Mileage evidence checklist — 2026/27</h1>
+    <p>Unofficial helper for UK business mileage records. <strong>Not tax advice.</strong> Verify rates on <a href="https://www.gov.uk/government/publications/rates-and-allowances-travel-mileage-and-fuel-allowances/travel-mileage-and-fuel-rates-and-allowances" rel="noopener noreferrer" target="_blank">GOV.UK</a>.</p>
+    <ul class="checklist">
+      <li><input type="checkbox" id="c1"><label for="c1">Record <strong>date, from, to, business purpose, miles</strong> (and passengers if relevant) for each business journey.</label></li>
+      <li><input type="checkbox" id="c2"><label for="c2">Use tax year <strong>2026/27</strong> AMAP rates — cars/vans <strong>55p</strong> first 10,000 business miles then <strong>25p</strong>; motorcycles <strong>24p</strong>; bicycles <strong>20p</strong>; passenger <strong>+5p</strong> — confirm on GOV.UK.</label></li>
+      <li><input type="checkbox" id="c3"><label for="c3">Employees: if employer pays below AMAP, <strong>Mileage Allowance Relief (MAR)</strong> may apply on the vehicle-rate shortfall only (passenger shortfalls do not qualify).</label></li>
+      <li><input type="checkbox" id="c4"><label for="c4">Export or save a <strong>monthly copy</strong> outside a single browser (CSV / print / cloud).</label></li>
+      <li><input type="checkbox" id="c5"><label for="c5">Keep records in case HMRC asks for evidence.</label></li>
+      <li><input type="checkbox" id="c6"><label for="c6">I understand this checklist is unofficial and not a filing service.</label></li>
+    </ul>
+    <p class="no-print"><button type="button" class="btn btn--secondary" onclick="window.print()">Print checklist</button></p>
+    <p class="hint">Want printable log sheets + MAR how-to year-round? <a href="https://payhip.com/b/d2CPD" rel="noopener noreferrer" target="_blank">MileClaim pack — £12 on Payhip</a>.</p>
+  </main>
+</body>
+</html>
