@@ -13,7 +13,7 @@
 | `mileage-log-sheet.md` | Printable A4-style blank mileage log (date / from / to / purpose / miles) with 2026/27 AMAP rates in the header |
 | `mar-howto.md` | One-page plain-English guide to Mileage Allowance Relief (MAR): when it applies, shortfall-only relief, P87 / Self Assessment, record-keeping |
 | `rates-2026-27.md` | Official-style AMAP rate table for 2026/27 plus a worked MAR example (employer 45p vs HMRC 55p) |
-| `HMRC-Mileage-Claim-Pack-2026-27.pdf` | Combined PDF of the above (if generated) |
+| `HMRC-Mileage-Claim-Pack-2026-27.pdf` | Combined PDF — delivered via Payhip only, not stored in this repo |
 
 Deliver the PDF as the main download when available; include the markdown files as editable extras, or zip everything.
 
